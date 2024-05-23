@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Update User</title>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css" />
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<link href="" rel="stylesheet" th:href=@{/css/index.css} />
+</head>
+<body>
+	<nav
+		class="navbar navbar-expand-lg navbar-light bg-light shadow sticky-top">
+		<div class="container">
+			<span class="navbar-brand text-success fs-4 p-0">SpringBoot
+				Project</span>
+
+		</div>
+	</nav>
+	<main class="d-lg-flex">
+		<div class="col-lg-2 bg-signup text-center "></div>
+		<section class="col-lg-10">
+			<div class="d-flex justify-content-center mb-4 p-2">
+				<div class=" col-10 col-lg-5 col-md-6 rounded p-4 mt-1 border-0">
+					<div class="text-center pb-3 ">
+						<h1>Update Users</h1>
+					</div>
+					<form th:action="@{/admin/users/save}" method="post"
+						th:object="${user}" class="needs-validation" novalidate>
+						<input type="hidden" th:field="*{id}" />
+						<div>
+							<div class="mb-2">
+								<label class="form-label">Email</label> <input
+									th:field="*{email}" type="email" class="form-control" required />
+								<div class="invalid-feedback">
+									*Please Enter Email. <span class="ms-1">e.g.
+										sample@mail.com</span>
+								</div>
+							</div>
+							<div class="mb-2">
+								<label class="form-label">New Password</label> <input
+									th:field="*{password}" type="password" class="form-control"
+									required minlength="6" maxlength="20" />
+								<div class="invalid-feedback">
+									*Please Enter New Password.
+									<p class="ms-2">Your password must be at least 6 characters
+										long.</p>
+								</div>
+							</div>
+							<div class="mb-2">
+								<label class="form-label">First name</label> <input
+									th:field="*{firstName}" type="text" class="form-control"
+									required minlength="2" maxlength="20" />
+								<div class="invalid-feedback">*Please Enter First name.</div>
+							</div>
+							<div class="mb-2">
+								<label class="form-label">Last name</label> <input
+									th:field="*{lastName}" type="text" class="form-control"
+									required minlength="2" maxlength="20" />
+								<div class="invalid-feedback">*Please Enter Last name.</div>
+							</div>
+
+							<div class="mb-3 form-group">
+								<label class="form-label">Assigned Roles</label>
+<!-- 								<div>
+									<th:block th:each="role : ${listRoles}">
+										<input type="radio" th:field="*{roles}" th:value="${role.id}"
+											th:text="${role.name}" class="m-2 mt-1 btn" />
+									</th:block>
+								</div> -->
+								<div>
+									<th:block th:each="role : ${listRoles}">
+										<input type="radio" th:field="*{roles}" th:value="${role.id}"
+											th:text="${role.name}" class="m-2 mt-1 btn" />
+									</th:block>
+								</div>
+							</div>
+							<div class="d-flex justify-content-between">
+								<div>
+									<a th:href="@{/admin/listusers}"
+										class="btn btn-sm btn-secondary">Go Back</a>
+								</div>
+								<div>
+									<button class="btn btn-sm btn-primary" type="submit">Update</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer class="bg-dark">
+		<div class="p-5 d-lg-flex justify-content-center">
+			<div class="col-lg-3 ">
+				<p class="text-light m-0 ">About Us</p>
+				<p class="text-light">Contact Us</p>
+				<p class="footer-p fw-bold m-0">dummy@email.com</p>
+				<p class="footer-p fw-bold m-0">(01) 7378 1111</p>
+				<p class="footer-p fw-bold">SpringBootProject</p>
+			</div>
+			<div class="col-lg-3">
+				<p class="text-light m-0">User Agreement</p>
+				<p class="text-light">Privacy Policy</p>
+			</div>
+			<div class="col-lg-4">
+				<p class="text-light m-0">Accredited Partner of:</p>
+				<p class="footer-p fw-bold">Project Spring Boot</p>
+			</div>
+			<div class="col-lg-2">
+				<p class="text-light m-0">Powered by:</p>
+				<p class="footer-p fw-bold">Pilipinas Teleserv, Inc.</p>
+				<div class="d-flex">
+					<div class="">
+						<img th:src="@{/image/2168281.png}" alt="Facebook Icon" width="35"
+							class="m-1" />
+					</div>
+					<div class="">
+						<img th:src="@{/image/3670274.png}" alt="Instagram Icon"
+							width="35" class="m-1" />
+					</div>
+					<div class="">
+						<img th:src="@{/image/2168336.png}" alt="Twitter Icon" width="35"
+							class="m-1" />
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	<script>
+		(function() {
+			'use strict'
+
+			// Fetch all the forms we want to apply custom Bootstrap validation styles to
+			var forms = document.querySelectorAll('.needs-validation')
+
+			// Loop over them and prevent submission
+			Array.prototype.slice.call(forms).forEach(function(form) {
+				form.addEventListener('submit', function(event) {
+					if (!form.checkValidity()) {
+						event.preventDefault()
+						event.stopPropagation()
+					}
+
+					form.classList.add('was-validated')
+				}, false)
+			})
+		})()
+	</script>
+</body>
+</html>

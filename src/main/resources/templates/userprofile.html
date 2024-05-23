@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>[[${#request.userPrincipal.principal.fullName}]] |
+	Profile</title>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css" />
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<link href="" rel="stylesheet" th:href=@{/css/index.css} />
+<link href="" rel="stylesheet" th:href=@{/css/userprofile.css} />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+<body>
+	<main class="d-flex">
+		<div
+			class="bg-profile border-danger col-1 fixed-top align-items-end d-flex justify-content-center">
+			<div class="text-center">
+				<h3>
+					<a th:href="@{/admin/listusers}"
+						class="btn btn-link text-decoration-none text-dark">Sign Out</a>
+				</h3>
+			</div>
+		</div>
+		<section class=" border-2 border-success col-12">
+			<div
+				class="border-2 border-primary d-flex justify-content-evenly offset-1 pb-4">
+				<div class="border-danger col-2">
+					<div class="sticky-top pt-5">
+						<div>
+							<img th:src="@{/image/avatarprofile.png}"
+								class=" rounded-circle w-100 shadow mb-4 " alt="profile picture">
+							<p class="m-0">SpringBoot</p>
+							<hr class="border border-primary m-0 mb-1 mt-1">
+							<h3 class=" pb-4">
+								<b>[[${#request.userPrincipal.principal.fullName}]]</b>
+							</h3>
+							<div class=" border-primary rounded shadow mt-3">
+								<div class="text-center track p-1">
+									<h5>
+										<b>Track My Order</b>
+									</h5>
+								</div>
+								<div class="border p-1 ">
+									<div
+										class="d-flex justify-content-evenly align-items-center mt-2 border-bottom">
+										<div class="col-5 ">
+											<h6>
+												<b>Delivered</b>
+											</h6>
+										</div>
+										<div class="col-2 text-center pb-1">
+											<div class="tracker-circle border rounded-circle border-2">
+												<p class="">2</p>
+											</div>
+										</div>
+
+									</div>
+									<div
+										class="d-flex justify-content-evenly align-items-center mt-2 border-bottom">
+										<div class="col-5">
+											<h6>
+												<b>In Transit</b>
+											</h6>
+										</div>
+										<div class="col-2 text-center pb-1">
+											<div class="tracker-circle rounded-circle border border-2">
+												<p class="">1</p>
+											</div>
+										</div>
+									</div>
+									<div
+										class="d-flex justify-content-evenly align-items-center mt-2 border-bottom">
+										<div class="col-5">
+											<h6>
+												<b>Processing</b>
+											</h6>
+										</div>
+										<div class="col-2 text-center pb-1">
+											<div class="tracker-circle rounded-circle border border-2">
+												<p class="">0</p>
+											</div>
+										</div>
+									</div>
+									<div
+										class="d-flex justify-content-evenly align-items-center mt-2">
+										<div class="col-5">
+											<h6>
+												<b>To Pay</b>
+											</h6>
+										</div>
+										<div class="col-2 text-center pb-1">
+											<div class="tracker-circle rounded-circle border border-2">
+												<p class="">0</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Order List  -->
+				<div class="col-8 ">
+					<div class="mt-4 mb-4">
+						<h5>Trending News Today</h5>
+						<div class="d-flex justify-content-around mt-3">
+							<div class="trens-box box1 col-lg-4 shadow rounded">
+								<h5 class="mt-2 ms-2 trends-p">
+									<b class="">The Ocean Plastic Pollution Problem</b>
+								</h5>
+							</div>
+							<div class="trens-box box2 col-lg-4 rounded shadow me-3 ms-3">
+								<h5 class="mt-2 ms-2 trends-p">
+									<b>Rescue Dogs Risk Lives to Save Lives</b>
+								</h5>
+							</div>
+
+							<div class="trens-box box3 col-lg-4 rounded shadow">
+								<h5 class="mt-2 ms-2 trends-p">
+									<b>Waste Management Tips</b>
+								</h5>
+							</div>
+						</div>
+					</div>
+					<div>
+						<p>
+							<a class="btn btn-success border-0 btn-order-now mt-3 mb-2"
+								data-bs-toggle="collapse" href="#collapseExample" role="button"
+								aria-expanded="false" aria-controls="collapseExample"> Order
+								Now</a>
+						</p>
+						<div class="collapse " id="collapseExample">
+							<div class="card card-body card-order-border ">
+								<div
+									class=" text-center m-1 mt-2 d-flex flex-wrap justify-content-evenly ">
+									<a th:href="@{/userprofile/ordernow}"
+										class="col-5 mb-2 btn btn-danger border-0 btn-birthCert">Birth
+										Certificate</a> <a th:href="@{/userprofile/ordernow}"
+										class="col-5 mb-2 btn btn-danger border-0 btn-birthCert">Marriage
+										Certificate</a> <a th:href="@{/userprofile/ordernow}"
+										class="col-5 mb-2 btn btn-danger border-0 btn-birthCert">Death
+										Certificate</a> <a th:href="@{/userprofile/ordernow}"
+										class="col-5 mb-2 btn btn-danger border-0 btn-birthCert">CENOMAR
+										Certificate</a>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Requested  -->
+					<div class="border-warning">
+						<!-- Sample -->
+						<div class="p-3 border rounded shadow mt-4" data-aos="zoom-in"
+							data-aos-duration="1000">
+							<div class=" border-danger">
+								<div class="col-12 d-flex flex-wrap justify-content-between">
+									<h3 class="">[[${#request.userPrincipal.principal.fullName}]]</h3>
+									<p class="">#85000002</p>
+								</div>
+								<div class="col-12 d-flex justify-content-between flex-wrap">
+									<p class="">Spring Boot</p>
+									<h6 class=" d-flex">
+										Status: _
+										<p class="text-decoration-underline">Delivered</p>
+										_
+									</h6>
+								</div>
+							</div>
+							<div class="border-danger">
+								<div class="col-10">
+									<h5 class="mb-1">*Sample Certificate</h5>
+									<p>Contrary to popular belief, Lorem Ipsum is not simply
+										random text. It has roots in</p>
+
+								</div>
+								<div class="text-center">
+									<a th:href="@{/userprofile/certificate}"
+										class="btn btn-sm btn-danger border-0 btn-viewcert">View
+										Certificate</a>
+								</div>
+							</div>
+						</div>
+						<!-- End Sample -->
+						<!-- Sample -->
+						<div class="p-3 border rounded shadow mt-4" data-aos="zoom-in"
+							data-aos-duration="1000">
+							<div class=" border-danger">
+								<div class="col-12 d-flex flex-wrap justify-content-between">
+									<h3 class="">[[${#request.userPrincipal.principal.fullName}]]</h3>
+									<p class="">#77603054</p>
+								</div>
+								<div class="col-12 d-flex justify-content-between flex-wrap">
+									<p class="">Spring Boot</p>
+									<h6 class=" d-flex">
+										Status: _
+										<p class="text-decoration-underline">Delivered</p>
+										_
+									</h6>
+								</div>
+							</div>
+							<div class="border-danger">
+								<div class="col-10">
+									<h5 class="mb-1">*Sample Certificate</h5>
+									<p>Contrary to popular belief, Lorem Ipsum is not simply
+										random text. It has roots in</p>
+
+								</div>
+								<div class="text-center">
+									<a th:href="@{/userprofile/certificate}"
+										class="btn btn-sm btn-danger border-0 btn-viewcert">View
+										Certificate</a>
+								</div>
+							</div>
+						</div>
+						<!-- End Sample -->
+						<!-- Sample -->
+						<div class="p-3 border rounded shadow mt-4" data-aos="zoom-in"
+							data-aos-duration="1000">
+							<div class=" border-danger">
+								<div class="col-12 d-flex flex-wrap justify-content-between">
+									<h3 class="">[[${#request.userPrincipal.principal.fullName}]]</h3>
+									<p class="">#79001072</p>
+								</div>
+								<div class="col-12 d-flex justify-content-between flex-wrap">
+									<p class="">Spring Boot</p>
+									<h6 class=" d-flex">
+										Status: _
+										<p class="text-decoration-underline">In Transit</p>
+										_
+									</h6>
+								</div>
+							</div>
+							<div class="border-danger">
+								<div class="col-10">
+									<h5 class="mb-1">*Sample Certificate</h5>
+									<p>Contrary to popular belief, Lorem Ipsum is not simply
+										random text. It has roots in</p>
+
+								</div>
+								<div class="text-center">
+									<a th:href="@{/userprofile/certificate}"
+										class="btn btn-sm btn-danger border-0 btn-viewcert">View
+										Certificate</a>
+								</div>
+							</div>
+						</div>
+						<!-- End Sample -->
+
+					</div>
+					<!-- EndRequested  -->
+				</div>
+			</div>
+			<!-- End Order List  -->
+		</section>
+	</main>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>
+		AOS.init();
+	</script>
+</body>
+</html>

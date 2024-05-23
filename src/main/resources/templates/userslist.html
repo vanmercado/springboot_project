@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>[[${#request.userPrincipal.principal.fullName}]] | All
+	Users List</title>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css" />
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<link href="" rel="stylesheet" th:href=@{/css/index.css} />
+</head>
+<body>
+	<nav
+		class="navbar navbar-expand-lg navbar-light bg-light shadow sticky-top offset-2">
+		<div class="container">
+			<span class="navbar-brand text-success fs-4 p-0">SpringBoot
+				Project</span>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+				aria-controls="navbarTogglerDemo02" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0 offset-lg-11 text-center">
+					<li class="nav-item">
+						<form th:action="@{/logout}" method="post">
+							<input
+								class="btn btn-link border-0 text-decoration-none text-secondary fs-6"
+								type="submit" value="Sign Out" />
+						</form>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<main class="d-flex">
+		<section class="col-2 bg-signup text-center fixed-top h-100 ">
+			<div class="d-flex align-items-end justify-content-center h-100">
+				<!-- 				<h3>
+					<a th:href="@{/newrequest}"
+						class="btn btn-link text-decoration-none text-dark">Order Now</a>
+				</h3> -->
+				<h3>
+					<a th:href="@{/admin}"
+						class="btn btn-link text-decoration-none text-dark">admin</a>
+				</h3>
+				<h3>
+					<a th:href="@{/userprofile}"
+						class="btn btn-link text-decoration-none text-dark">Profile</a>
+				</h3>
+			</div>
+		</section>
+		<section
+			class="mb-2 col-10 container offset-2 d-flex justify-content-center">
+			<div class=" col-11">
+				<div class="text-center mt-3">
+					
+					<h1>Dashboard</h1>
+				</div>
+				<div>
+					<form th:action="@{/listUsers}" method="get"
+						class="d-flex justify-content-between">
+						<span class="text-secondary align-self-center fs-5">List of
+							All Registered Users</span>
+						<div class="col-2">
+							<div class="input-group has-validation">
+								<input type="text" id="myInput" class="form-control input-sm">
+								<span class="input-group-text" id="inputGroupPrepend"><img
+									th:src="@{/image/searchicons.png}" alt="Search Icon" width="23"
+									class=" p-1" /></span>
+							</div>
+						</div>
+					</form>
+					<input type="button" value="Delete Selected Row" id="deleterows" class="btn btn-danger btn-sm"/>
+					<div class="table-tops mt-3">
+						<table class="table table-hover caption-top admindashboard "
+							id="list-data">
+							<thead class="table-dark sticky-top">
+								<tr>
+									<th><input type="checkbox" id="test" /></th>
+									<th>#</th>
+									<th>E-mail</th>
+									<th>First Name</th>
+									<th>Last Name</th>
+									<th>Roles</th>
+									<th>Actions</th>
+								</tr>
+							</thead>
+							<tbody id="myTable">
+								<tr th:each="user: ${listUsers}">
+									<td><input type="checkbox" name="chkbox"></td>
+									<td th:text="${user.id}">#</td>
+									<td th:text="${user.email}">Email</td>
+									<td th:text="${user.firstName}">First Name</td>
+									<td th:text="${user.lastName}">Last Name</td>
+									<td th:text="${user.roles}">Roles</td>
+									<td>
+										<div
+											class="d-flex justify-content-between col-8 align-items-center">
+											<div>
+												<a th:href="@{'/admin/users/edit/' + ${user.id}}"
+													class="text-decoration-none">Edit</a>
+											</div>
+											<div class="ms-3">
+												<a th:href="@{'/admin/users/delete/' + ${user.id}}"
+													class="btn btn-sm btn-danger">Delete</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="panel-footer d-flex justify-content-between">
+						<div class="align-self-start ">
+							<span> Total Items: [[${totalItems}]] <span class="ms-2">
+									Page [[${currentPage}]] of [[${totalPages}]] </span>
+							</span>
+
+						</div>
+						<ul class="pagination">
+							<li class="page-item"><a class="page-link border-0"
+								th:if="${currentPage > 1}" th:href="@{/admin/listusers/page/1}">&laquo;</a>
+								<span th:unless="${currentPage > 1}"> <a
+									class="page-link border-0"> &laquo;</a>
+
+							</span></li>
+							<li class="page-item"><a class="page-link border-0"
+								th:if="${currentPage > 1}"
+								th:href="@{'/admin/listusers/page/' + ${currentPage - 1}}">Previous</a>
+								<span th:unless="${currentPage > 1}"> <a
+									class="page-link border-0"> Previous</a>
+							</span></li>
+							<li class="page-item d-flex">
+								<div th:each="i: ${#numbers.sequence(1, totalPages)}">
+									<a class="page-link border-0"
+										th:href="@{'/admin/listusers/page/' + ${i}}">[[${i}]]</a>
+								</div>
+							</li>
+							<li class="page-item"><a class="page-link border-0"
+								th:if="${currentPage < totalPages}"
+								th:href="@{'/admin/listusers/page/' + ${currentPage + 1}}">Next</a>
+								<span th:unless="${currentPage < totalPages}"> <a
+									class="page-link border-0"> Next</a>
+							</span></li>
+							<li class="page-item"><a class="page-link border-0"
+								th:if="${currentPage < totalPages}"
+								th:href="@{'/admin/listusers/page/' + ${totalPages}}">&raquo;</a>
+								<span th:unless="${currentPage < totalPages}"> <a
+									class="page-link border-0">&raquo;</a>
+
+							</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script
+		src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+	<script>
+		$(document).ready(function() {
+		    $("#myInput").on("keyup",
+		      function() {
+		        var value=$(this).val().toLowerCase();
+	
+		        $("#myTable tr").filter(function() {
+		            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+		          });
+		      });
+		  });
+	</script>
+	<script>
+		$(function() {
+		    $.ajax({
+		        url: 'data.json',
+		        dataType: 'json',
+		        success: function(resp) {
+		            if (resp.length > 0) {
+		                var i = 1;
+		                Object.keys(resp).map(k => {
+		                    var data = resp[k]
+		                    var tr = $('<tr>')
+		                    tr.append('<td class="py-1 px-2 text-center">' + (i++) + '</td>')
+		                    tr.append('<td class="py-1 px-2">' + (data.name) + '</td>')
+		                    tr.append('<td class="py-1 px-2">' + (data.numberrange) + '</td>')
+		                    tr.append('<td class="py-1 px-2">' + (data.text) + '</td>')
+		                    $('#list-data tbody').append(tr)
+		                })
+		            }
+		        }
+		    })
+		    $('#list-data th').click(function() {
+		        var dir = $(this).attr('data-dir') || 'desc';
+		        dir = dir == 'desc' ? 'asc' : 'desc';
+		        $(this).attr('data-dir', dir)
+		        var dir_icon = '<span class="ms-4 fw-bold sort-' + dir + '"></span>'
+		        $('#list-data thead').find('.sort-asc').remove()
+		        $('#list-data thead').find('.sort-desc').remove()
+		        $(this).append(dir_icon)
+		        sort_element($(this).index(), dir)
+		    })
+		 
+		})
+		 
+		function sort_element(tbl_nth, dir) {
+		    tbl_nth = tbl_nth + 1
+		    var sorted = $($('#list-data tbody tr td:nth-child(' + tbl_nth + ')').toArray().sort(function(a, b) {
+		            var Aelement = a.innerText,
+		                Belement = b.innerText;
+		            if ($.isNumeric(Aelement) && $.isNumeric(Belement)) {
+		                if (dir == 'asc')
+		                    return Aelement - Belement;
+		                else
+		                    return Belement - Aelement;
+		            } else {
+		                if (dir == 'asc')
+		                    return Aelement.localeCompare(Belement)
+		                else
+		                    return Belement.localeCompare(Aelement)
+		            }
+		 
+		        }))
+		        // console.log(sorted)
+		 
+		    Object.keys(sorted).map(k => {
+		        $(sorted[k]).closest('tr').detach().appendTo('#list-data tbody')
+		    })
+		}
+	</script>
+	<script>
+	$(document).ready(function(){
+		$("#deleterows").click(function(){
+			$("table tbody").find('input[name="chkbox"]').each(function(){
+				if($(this).is(":checked")){
+					$(this).parents("tr").remove();
+				}
+			})
+		})
+	})
+	</script>
+	<script>
+	$(document).ready(function(){
+		$("#test").click(function(){
+			$("#deleterows").toggle(1000);	
+		})
+	})
+	</script>
+</body>
+</html>

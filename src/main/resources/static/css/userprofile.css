@@ -1,0 +1,112 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.bg-profile {
+	background-image:
+		url(https://mariadb.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2018/10/MDB-asset-image-19.jpg.webp);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+}
+
+.trens-box {
+	position: relative;
+	height: 190px;
+	cursor: pointer;
+	overflow: hidden;
+	transition: transform .2s;
+}
+
+.trens-box:hover {
+	transform: scale(1.15);
+	z-index: 1
+}
+
+.box1 {
+	background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0),
+		rgba(0, 0, 0, 0.442), rgb(0, 0, 0)),
+		url(/image/oceanprob.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	filter: brightness(90%);
+}
+
+.box2 {
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0),
+		rgba(0, 0, 0, 0.442), rgb(0, 0, 0)),
+		url(/image/rescuedog.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	filter: brightness(90%);
+}
+
+.box3 {
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0),
+		rgba(0, 0, 0, 0.442), rgb(0, 0, 0)),
+		url(/image/wastem.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	filter: brightness(90%);
+}
+
+.box4 {
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0),
+		rgba(0, 0, 0, 0.442), rgb(0, 0, 0)),
+		url(../photos/wastem/helphand.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	filter: brightness(90%);
+}
+
+.trends-p {
+	color: white;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.tracker-circle {
+	width: 30px;
+	height: 30px;
+}
+
+.order-img {
+	width: 130px;
+}
+
+.track {
+	background-color: lightgray;
+}
+.ordernow-track{
+	background-color: #E64848;
+	
+}
+.border-ordernow-track {
+	border: 2px solid #E64848;
+}
+.btn-order-now{
+	/* background-color: #829460; */
+	background-color: #6D8B74;
+	width: 100%;
+}
+
+.btn-viewcert {
+	width: 100%;
+	background-color: #850E35;
+}
+
+.btn-birthCert{
+	background-color: #6D8B74;
+}
+
+.card-order-border{
+	border: 1px dashed  #6D8B74;
+}

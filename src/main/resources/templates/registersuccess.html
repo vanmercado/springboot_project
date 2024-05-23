@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Succeeded</title>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css" />
+<link href="" rel="stylesheet" th:href=@{/css/index.css} />
+</head>
+<body>
+	<main class="d-lg-flex main-regissuccess ">
+		<section
+			class="d-flex justify-content-center col-lg-8 p-5 order-lg-2">
+			<div class="text-center pb-5 pt-5">
+				<h1>You have signed up successfully !</h1>
+				<a th:href="@{/login}" class="btn btn-outline-success btn-lg mt-5">
+					Click here to login </a>
+			</div>
+		</section>
+		<section class="col-lg-4 bg-signup text-center order-lg-1">
+			<div class="d-flex justify-content-center align-items-center h-100 ">
+				<div class=" text-center p-4 text-white">
+					<!--Birth Certificate  -->
+					<div class=" text-center p-2 d-flex">
+						<div class="mb-1 align-self-center">
+							<img th:src="@{/image/4845497.png}" alt="Birth Certificate Icon"
+								width="60" class="align-self-center" />
+						</div>
+						<div class="pe-4 ps-4">
+							<span class="fs-4 ">Birth Certificate</span>
+							<p>Lorem ipsum dolor sit, consectetur adipiscing elit, sed do
+								eiusmod</p>
+						</div>
+					</div>
+					<!--End Birth Certificate  -->
+					<!--Marriage Certificate  -->
+					<div class=" text-center p-2 d-flex">
+						<div class="mb-1 align-self-center">
+							<img th:src="@{/image/4128707.png}"
+								alt="Marriage Certificate Icon" width="60"
+								class="align-self-center" />
+						</div>
+						<div class=" pe-4 ps-4">
+							<span class="fs-4">Marriage Certificate</span>
+							<p>Lorem ipsum dolor sit, consectetur elit sed do eiusmod
+								tempor</p>
+						</div>
+					</div>
+					<!--End Marriage Certificate  -->
+					<!--Death Certificate  -->
+					<div class=" text-center p-2 d-flex">
+						<div class="mb-1 align-self-center">
+							<img th:src="@{/image/4056859.png}" alt="Death Certificate Icon"
+								width="60" class="align-self-center" />
+						</div>
+						<div class="pe-4 ps-4">
+							<span class="fs-4">Death Certificate</span>
+							<p>Lorem ipsum consectetur adipiscing eiusmod tempor</p>
+						</div>
+					</div>
+					<!--End Death Certificate  -->
+					<!-- CENOMAR Certificate  -->
+					<div class=" text-center p-2 d-flex">
+						<div class="mb-1 align-self-center">
+							<img th:src="@{/image/5560628.png}"
+								alt="CENOMAR Certificate Icon" width="60"
+								class="align-self-center" />
+						</div>
+						<div class="pe-4 ps-4">
+							<span class="fs-4">CENOMAR Certificate</span>
+							<p>Lorem ipsum dolor consectetur adipiscing sed do eiusmod
+								tempor</p>
+						</div>
+					</div>
+					<!--End CENOMAR Certificate  -->
+				</div>
+			</div>
+		</section>
+
+	</main>
+</body>
+</html>

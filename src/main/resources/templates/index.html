@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Spring Boot Project</title>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css" />
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<link href="" rel="stylesheet" th:href=@{/css/index.css} />
+</head>
+<body>
+	<main>
+		<nav
+			class="navbar navbar-expand-lg navbar-light bg-light shadow sticky-top">
+			<div class="container">
+				<span class="navbar-brand text-success fs-4 p-0">SpringBoot
+					Project</span>
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+					aria-controls="navbarTogglerDemo02" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+					<ul
+						class="navbar-nav me-auto mb-2 mb-lg-0 offset-lg-10 text-center">
+						<li class="nav-item"><a class="nav-link active fs-6"
+							aria-current="page" th:href="@{/admin}">Login</a></li>
+						<li class="nav-item"><a class="nav-link ms-lg-3  fs-6"
+							th:href="@{/register}">Register</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<section class="d-flex align-items-center mb-4 sectionOne">
+			<div class=" container text-center pt-5 pb-5 ">
+				<h3 class="mb-3 mt-2">ASP Certificate Online Application and
+					Delivery</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+					do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+					enim ad minim veniam, dolore eu fugiat nulla pariatur. Excepteur
+					sint occaecat cupidatat non proident, sunt in culpa qui officia
+					deserunt mollit anim id est laborum.</p>
+				<p>Sed ut perspiciatis unde omnis iste natus error sit
+					voluptatem accusantium doloremque laudantium, totam rem aperiam,
+					eaque ipsa quae ab illo inventore veritatis et quasi architecto
+					beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
+					voluptas sit aspernatur aut odit aut fugit, sed quia Neque porro
+					quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur</p>
+				<p>Reminder: At vero eos et accusamus et iusto odio dignissimos
+					ducimus qui voluptatum deleniti atque corrupti quos dolores</p>
+				<div>
+					<a th:href="@{/register}" class="btn btn-success btn-lg mt-4"
+						style="padding-left: 120px; padding-right: 120px;">Order Now</a>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class=" container d-flex justify-content-center ">
+				<div
+					class="d-flex justify-content-center rounded border border-success border-1 border-end-0 col-9 sectionTwo-p1">
+					<p
+						class="fs-5 pt-3 col-7 d-flex align-items-center justify-content-center">Nationwide
+						delivery of ASP certificates</p>
+					<div
+						class="col-5 border border-success border-1 border-bottom-0 border-top-0 ">
+						<div
+							class="sectionTwo-p2 d-flex align-items-center justify-content-center h-50">
+							<span><b>3 to 4 Working days <sup>1</sup> within Metro
+									Manila
+							</b></span>
+						</div>
+						<div
+							class=" d-flex align-items-center justify-content-center h-50">
+							<span><b>3 to 8 Working days <sup>1</sup> outside
+									Metro Manila
+							</b></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class=" container d-flex justify-content-center pt-2 ">
+				<span class="">Duis aute irure dolor in reprehenderit
+					voluptate velit esse cillum dolore eu fugiat pariatur occaecat
+					cupidatat.</span>
+			</div>
+			<div class="container text-center mt-5 pb-4 pt-3">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+					do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+					enim ad minim veniam, dolore eu fugiat nulla pariatur. Excepteur
+					sint occaecat cupidatat non proident, sunt in culpa qui officia
+					deserunt mollit anim id est laborum.</p>
+				<p>Sed ut perspiciatis unde omnis iste natus error sit
+					voluptatem accusantium doloremque laudantium, totam rem aperiam,
+					eaque ipsa quae ab illo inventore veritatis et quasi architecto
+					beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
+					voluptas sit aspernatur aut odit aut fugit, sed quia</p>
+			</div>
+		</section>
+		<section class="mb-5">
+			<div class="container mt-5">
+				<div class="text-center pb-2">
+					<h5>Available Certificates</h5>
+				</div>
+				<div class="mt-4 d-lg-flex justify-content-between">
+				<!-- 	Birth Certificate -->
+					<div class=" text-center p-3 certificate">
+						<div>
+							<img th:src="@{/image/4845497.png}" alt="Birth Certificate Icon"
+								width="75" class="mb-1" />
+						</div>
+						<span class="fs-5">Birth Certificate</span>
+						<p>Lorem ipsum dolor sit, consectetur adipiscing elit, sed do
+							eiusmod tempor</p>
+						<div>
+							<a th:href="@{/register}" class="btn btn-success btn-sm">Order
+								Now</a>
+						</div>
+					</div>
+				<!-- 	End Birth Certificate Marriage Certificate -->
+					<div class=" text-center p-3 certificate">
+						<div>
+							<img th:src="@{/image/4128707.png}"
+								alt="Marriage Certificate Icon" width="75" class="mb-1" />
+						</div>
+						<span class="fs-5">Marriage Certificate</span>
+						<p>Lorem ipsum dolor sit, consectetur adipiscing elit, sed do
+							eiusmod tempor</p>
+						<div>
+							<a th:href="@{/register}" class="btn btn-success btn-sm">Order
+								Now</a>
+						</div>
+					</div>
+					<!-- End Marriage Certificate Death Certificate -->
+					<div class=" text-center p-3 certificate">
+						<div>
+							<img th:src="@{/image/4056859.png}" alt="Death Certificate Icon"
+								width="75" class="mb-1" />
+						</div>
+						<span class="fs-5">Death Certificate</span>
+						<p>Lorem ipsum dolor sit, consectetur adipiscing elit, sed do
+							eiusmod tempor</p>
+						<div>
+							<a th:href="@{/register}" class="btn btn-success btn-sm">Order
+								Now</a>
+						</div>
+					</div>
+					<!-- End Death Certificate CENOMAR Certificate -->
+					<div class=" text-center p-3 certificate">
+						<div>
+							<img th:src="@{/image/5560628.png}"
+								alt="CENOMAR Certificate Icon" width="75" class="mb-1" />
+						</div>
+						<span class="fs-5">CENOMAR Certificate</span>
+						<p>Lorem ipsum dolor sit, consectetur adipiscing elit, sed do
+							eiusmod tempor</p>
+						<div>
+							<a th:href="@{/register}" class="btn btn-success btn-sm">Order
+								Now</a>
+						</div>
+					</div>
+					<!-- End CENOMAR Certificate -->
+				</div>
+			</div>
+		</section>
+		<section class="mb-5">
+			<div class="container text-center mt-5 pb-4 pt-3">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+					do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+					enim ad minim veniam, dolore eu fugiat nulla pariatur. Excepteur
+					sint occaecat cupidatat non proident, sunt in culpa qui officia
+					deserunt mollit anim id est laborum.</p>
+			</div>
+			<div class="container mt-5 ">
+				<div class="text-center pb-3">
+					<h5>3 Easy Steps</h5>
+				</div>
+				<div class="mt-4 d-lg-flex justify-content-around">
+					<!-- Step 1 -->
+					<div class=" text-center pb-5">
+						<div class=" col-2 offset-3">
+							<img th:src="@{/image/3840581.png}" alt="Birth Certificate Icon"
+								width="25" class="mb-1" />
+						</div>
+						<div>
+							<img th:src="@{/image/2997512.png}" alt="Birth Certificate Icon"
+								width="75" class="mb-3" />
+						</div>
+						<p>Lorem ipsum dolor sit consectetur</p>
+					</div>
+					<!-- End Step 1 Step 2 -->
+					<div class=" text-center pb-5">
+						<div class=" col-2 offset-3">
+							<img th:src="@{/image/3841714.png}" alt="Birth Certificate Icon"
+								width="25" class="mb-1" />
+						</div>
+						<div>
+							<img th:src="@{/image/71227.png}" alt="Birth Certificate Icon"
+								width="75" class="mb-3" />
+						</div>
+						<p>Nemo enim ipsam voluptatem</p>
+					</div>
+					<!-- End Step 2 Step 3 -->
+					<div class=" text-center pb-5">
+						<div class=" col-2 offset-3">
+							<img th:src="@{/image/3841715.png}" alt="Birth Certificate Icon"
+								width="25" class="mb-1" />
+						</div>
+						<div>
+							<img th:src="@{/image/5655901.png}" alt="Birth Certificate Icon"
+								width="75" class="mb-3" />
+						</div>
+						<p>Nemo enim ipsam voluptatem</p>
+					</div>
+				<!-- 	End Step 3 -->
+				</div>
+			</div>
+		</section>
+		<section class="pb-5 pt-5 sectionFive">
+			<div class="d-lg-flex text-center container">
+				<div class="col-lg-6 text-center align-self-center pb-lg-5">
+					<div class="">
+						<h4 class="mb-3">Contact Us Now</h4>
+					</div>
+					<div>
+						<p class="">Lorem ipsum dolor sit, consectetur adipiscing
+							elit, sed do eiusmod tempor Nemo enim ipsam voluptatem</p>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="">
+						<span class="btn btn-success btn-sm mt-4 w-50">Email us at
+							dummy@email.com</span>
+					</div>
+					<div class="col-12">
+						<span class="btn btn-success btn-sm mt-2 w-50">Chat with us
+							on Facebook</span>
+					</div>
+					<div>
+						<span class="btn btn-success btn-sm mt-2 w-50">Call us at
+							(01) 7378 1111</span>
+					</div>
+					<div class="container col-7 mt-1">
+						<p>* ipsum dolor sit, sed do eiusmod tempor</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="bg-dark">
+			<div class="p-5 d-lg-flex justify-content-center">
+				<div class="col-lg-3 ">
+					<p class="text-light m-0 ">About Us</p>
+					<p class="text-light">Contact Us</p>
+					<p class="footer-p fw-bold m-0">dummy@email.c][']om</p>
+					<p class="footer-p fw-bold m-0">(01) 7378 1111</p>
+					<p class="footer-p fw-bold">SpringBootProject</p>
+				</div>
+				<div class="col-lg-3">
+					<p class="text-light m-0">User Agreement</p>
+					<p class="text-light">Privacy Policy</p>
+				</div>
+				<div class="col-lg-4">
+					<p class="text-light m-0">Accredited Partner of:</p>
+					<p class="footer-p fw-bold">Project Spring Boot</p>
+				</div>
+				<div class="col-lg-2">
+					<p class="text-light m-0">Powered by:</p>
+					<p class="footer-p fw-bold">Pilipinas Inc.</p>
+					<div class="d-flex">
+						<div class="">
+							<img th:src="@{/image/2168281.png}" alt="Facebook Icon"
+								width="35" class="m-1" />
+						</div>
+						<div class="">
+							<img th:src="@{/image/3670274.png}" alt="Instagram Icon"
+								width="35" class="m-1" />
+						</div>
+						<div class="">
+							<img th:src="@{/image/2168336.png}" alt="Twitter Icon" width="35"
+								class="m-1" />
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</footer>
+	</main>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+</body>
+</html>
